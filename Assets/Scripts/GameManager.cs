@@ -83,7 +83,9 @@ public class GameManager : MonoBehaviour
     void DestroyPlayer()
     {
         FindObjectOfType<UIManager>().GameOver();
-        FindObjectOfType<Player>().DestroyPlayer();
+        Player player = FindObjectOfType<Player>();
+        if(player != null) { player.DestroyPlayer(); }
+        //FindObjectOfType<Player>().DestroyPlayer();
     }
 
     public void ApplicationQuit()
